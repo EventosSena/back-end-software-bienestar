@@ -20,10 +20,15 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.EventosSena.entities.Aprendiz;
+import com.EventosSena.entities.Event;
 import com.EventosSena.services.aprendiz.ServicesAprendiz;
+import com.EventosSena.services.event.ServicesEvent;
 
 
 
@@ -36,6 +41,8 @@ public class ControllerAprendiz {
 	
 	@Autowired
 	private ServicesAprendiz aprendizService;
+	@Autowired
+	private ServicesEvent eventService;
 	
 	 /////////////////// APRENDIZ REGISTRAR   http://localhost:8080/aprendiz/save ////////////////
 	@CrossOrigin(origins = {"http://localhost:4200","null"})
@@ -158,12 +165,38 @@ public class ControllerAprendiz {
 		
 		return  aprendiz;
 	}
+	
+	
+	
+	
+	/////////////////// CONSULT ATTENDANCE   http://localhost:8080/aprendiz/consultAttendance?id=# ////////////////
+	@CrossOrigin(origins = {"http://localhost:4200","null"})
+	@GetMapping("/consultAttendance")
+	public @ResponseBody String getApr(@RequestParam List<Long> id) {
+		
+		String a=null;
+		String b = null ;
+		try {
+			Optional<Aprendiz> i = aprendizService.findById(id.get(0));
+			Optional<Event> e = eventService.findById(id.get(0));
+			a = i.get().getFull_name();
+			b = e.get().getName();	
+		
+			
+		} catch (Exception e) {
+			System.out.println("adasdasdsd");
+		}
+
+			return a+" / "+b;
+			
+		}
+	}
+
+
+	
+	
 
 	
 	
 	
-	
-	
-	
 
-}
