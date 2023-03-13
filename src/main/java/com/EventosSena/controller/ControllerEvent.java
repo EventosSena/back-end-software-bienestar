@@ -69,7 +69,7 @@ public class ControllerEvent {
 	
 		Optional<Event> event = null;
 		Map<String, Object> response = new HashMap<>();
-		
+		 
 		try {
 			event =eventService.findById(id);
 			
@@ -159,6 +159,7 @@ public class ControllerEvent {
 		return  event;
 	}
 
+	
 
 	
 	

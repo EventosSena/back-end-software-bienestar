@@ -41,6 +41,7 @@ public class ControllerAprendiz {
 	
 	@Autowired
 	private ServicesAprendiz aprendizService;
+	
 	@Autowired
 	private ServicesEvent eventService;
 	
@@ -165,7 +166,7 @@ public class ControllerAprendiz {
 		
 		return  aprendiz;
 	}
-	
+	 
 	
 	
 	

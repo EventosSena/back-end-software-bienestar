@@ -1,6 +1,7 @@
 package com.EventosSena.entities;
 
 import java.io.Serializable;
+import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -40,6 +41,7 @@ public class Attendance implements Serializable {
 		// TODO Auto-generated constructor stub
 	}
 
+
 	public Attendance(Long id, Aprendiz aprendiz_id, Event event_id) {
 		super();
 		this.id = id;
@@ -70,7 +72,6 @@ public class Attendance implements Serializable {
 	public void setEvent_id(Event event_id) {
 		this.event_id = event_id;
 	}
-	
 	
 
 	

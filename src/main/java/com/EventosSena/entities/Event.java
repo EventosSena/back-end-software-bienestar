@@ -52,7 +52,7 @@ public class Event implements Serializable {
 	private  List<Attendance> attendance;
 	
 
-
+	
 
 	public Event() {
 		super();
@@ -61,14 +61,12 @@ public class Event implements Serializable {
 
 
 
-
-
 	public Event(Long id, String name, String description, Timestamp date, String place, Responsible responsible_id,
 			List<Attendance> attendance) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.description = description;
+		this.description = description; 
 		this.date = date;
 		this.place = place;
 		this.responsible_id = responsible_id;

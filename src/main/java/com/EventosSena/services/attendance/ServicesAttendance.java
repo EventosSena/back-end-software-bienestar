@@ -19,7 +19,7 @@ public interface ServicesAttendance {
 	
 	public Optional<Attendance>findById(Long  id);
 	
-	public Attendance save(Attendance attendancen);
+	public Attendance save(Attendance attendance);
 	
 	public void deletById(Long  id);
 
